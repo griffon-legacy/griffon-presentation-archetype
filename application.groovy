@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2011 the original author or authors.
+ * Copyright 2008-2012 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,14 +21,11 @@
 import griffon.util.GriffonNameUtils
 import griffon.util.Metadata
 
-includeTargets << griffonScript("_GriffonPlugins")
-includeTargets << griffonScript("_GriffonInit")
-includeTargets << griffonScript("CreateMvc" )
+includeTargets << griffonScript('CreateMvc')
 
-target(name: 'createApplicationProject', description: '', prehook: null, posthook: null) {
-    resolveArchetype()
-    resolveFileType()
-
+target(name: 'createApplicationProject',
+       description: 'Creates a new application project',
+       prehook: null, posthook: null) {
     createProjectWithDefaults()
 
     new File("${basedir}/griffon-app/conf/Application.groovy").text = '''
@@ -48,7 +45,6 @@ mvcGroups {
     }
 
     Metadata md = Metadata.getInstance(new File("${basedir}/application.properties"))
-    // installPluginExternal md, 'swing'
-    installPluginExternal md, 'slideware'
+    installPluginsLatest md, ['swing', 'slideware']
 }
 setDefaultTarget(createApplicationProject)

@@ -19,7 +19,7 @@
  */
 class PresentationGriffonArchetype {
     String version = '1.0'
-    String griffonVersion = '0.9.5 > *'
+    String griffonVersion = '0.9.5-SNAPSHOT > *'
     String license = 'Apache Software License 2.0'
     List authors = [
         [
