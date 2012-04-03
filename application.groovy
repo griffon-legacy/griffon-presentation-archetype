@@ -40,11 +40,27 @@ mvcGroups {
 }
 '''
 
+    new File("${basedir}/griffon-app/conf/Config.groovy").append '''
+presentation {
+    screenWidth = 1024
+    screenHeight = 768
+    template = 'Default'
+    order = []
+}
+'''
+    ant.copy(todir: "${basedir}/griffon-app/resources", overwrite: true, force: true) {
+        fileset(dir: "${archetypeDirPath}/griffon-app/resources")
+    }
+
+    ant.copy(todir: "${basedir}/griffon-app/slides", overwrite: true, force: true) {
+        fileset(dir: "${archetypeDirPath}/griffon-app/slides")
+    }
+
     ant.replace(dir: "${basedir}/griffon-app/conf") {
         replacefilter(token: "@griffon.project.name@", value: GriffonNameUtils.capitalize(griffonAppName))
     }
 
     Metadata md = Metadata.getInstance(new File("${basedir}/application.properties"))
-    installPluginsLatest md, ['swing', 'slideware']
+    installPluginsLatest md, ['swing', 'slideware', "gfx-builder"]
 }
 setDefaultTarget(createApplicationProject)

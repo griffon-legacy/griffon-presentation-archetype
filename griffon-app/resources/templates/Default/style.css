@@ -1,0 +1,62 @@
+.image {
+    swing-halign: center;
+    swing-valign: middle;
+}
+.header {
+    font-family: SansSerif;
+    font-weight: bold;
+    font-size: '${((screenWidth * 32)/1024) as int}';
+    color: #000000;
+    swing-horizontal-text-position: center;
+    swing-halign: center;
+}
+.footer {
+    font-family: SansSerif;
+    font-weight: bold;
+    font-size: '${((screenWidth * 24)/1024) as int}';
+    color: #000000;
+    swing-horizontal-text-position: center;
+    swing-halign: center;
+    swing-vertical-text-position: bottom;
+    swing-valign: bottom;
+}
+.codeEditor {
+    font-size: '${((screenWidth * 14)/1024) as int}';
+}
+.H1{
+    font-family: SansSerif;
+    font-weight: bold;
+    font-size: '${((screenWidth * 48)/1024) as int}';
+    swing-halign: center;
+    color: #000000;
+}
+.H2 {
+    font-family: SansSerif;
+    font-weight: bold;
+    font-size: '${((screenWidth * 40)/1024) as int}';
+    swing-halign: center;
+    color: #000000;
+}
+.H3 {
+    font-family: SansSerif;
+    font-weight: bold;
+    font-size: '${((screenWidth * 32)/1024) as int}';
+    swing-halign: center;
+    color: #000000;
+}
+.H4 {
+    font-family: SansSerif;
+    font-weight: bold;
+    font-size: '${((screenWidth * 24)/1024) as int}';
+    swing-halign: center;
+    color: #000000;
+}
+.H5 {
+    font-family: SansSerif;
+    font-weight: bold;
+    font-size: '${((screenWidth * 20)/1024) as int}';
+    swing-halign: center;
+    color: #000000;
+}
+
+

@@ -18,16 +18,20 @@
  * @author Andres Almiray
  */
 class PresentationGriffonArchetype {
-    String version = '1.0'
+    String version = '1.1'
     String griffonVersion = '0.9.5 > *'
     String license = 'Apache Software License 2.0'
     String documentation = ''
     String source = 'https://github.com/griffon/griffon-presentation-archetype'
     List authors = [
-        [
-            name: 'Andres Almiray',
-            email: 'aalmiray@yahoo.com'
-        ]
+            [
+                    name: 'Andres Almiray',
+                    email: 'aalmiray@yahoo.com'
+            ],
+            [
+                    name: 'Alexander Klein',
+                    email: 'info@aklein.org'
+            ]
     ]
     String title = 'Creates interactive presentations'
     String description = '''
