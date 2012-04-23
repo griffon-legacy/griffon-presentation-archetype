@@ -30,7 +30,7 @@ target(name: 'createApplicationProject',
 
     new File("${basedir}/griffon-app/conf/Application.groovy").text = '''
 application {
-    title = 'presentation'
+    title = '@griffon.project.name@'
     startupGroups = ['DeckLauncher']
 
     // Should Griffon exit when no Griffon created frames are showing?
@@ -57,7 +57,7 @@ presentation {
     }
 
     ant.replace(dir: "${basedir}/griffon-app/conf") {
-        replacefilter(token: "presentation", value: GriffonNameUtils.capitalize(griffonAppName))
+        replacefilter(token: "@griffon.project.name@", value: GriffonNameUtils.capitalize(griffonAppName))
     }
 
     Metadata md = Metadata.getInstance(new File("${basedir}/application.properties"))
